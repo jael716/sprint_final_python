@@ -3,10 +3,11 @@ import random
 usuarios=["donramon","goku","saitama","luffy","ichigo","gon","eren","shinji","sakura","ranma"]
 cuentas=[]
 
+#Funcion que crea cuentas de usuario en diccionarios
 def crear_cuenta(user,dic):
     for i in user:
         clave=crear_contrasena()
-        
+        #Agregar teléfonos de usuarios
         while True:
             telefono=int(input(f"agregue su numero de telefono para {i}  con 8 digitos(********): ").strip())
             if len(str(telefono))!=8:
@@ -22,7 +23,7 @@ def crear_cuenta(user,dic):
     
     return dic
 
-
+#Funcion que crea contraseña con los parametros requeridos
 def crear_contrasena():
     contrasena=[]
     caracter_minusculas=list("abcdefghijklmnopqrstuvwxyz")
@@ -48,6 +49,6 @@ def crear_contrasena():
     return contrasena_str
 
 
-
+#Ejecutando función
 cuentas=crear_cuenta(usuarios,cuentas)
 print(cuentas)
